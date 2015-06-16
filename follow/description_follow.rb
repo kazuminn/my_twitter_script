@@ -20,12 +20,16 @@ end
 =end
 
 number = 1 
+#followできるかを判断するメソッド
+def can_follow?(match,out,client,description)
+        return description =~ /match/ && !(description =~ /out/) && client.follow_request_sent? == false 
+end
 catch(:out) do
         followers_list.each do |x| 
                 followers_list_list = client.friends(x)
                 followers_list_list.each do |i| 
                         description = i.description
-                        if description =~ /琉大/ && !(description =~ /TOEIC/) then
+                        if can_follow?("琉球大学","TOEIC",i,description) then
                         client.follow(i)
                         number = number + 1 
                                 if number == 100 then
