@@ -13,17 +13,14 @@ end
 
 followers_list = client.friends("")
 
-=begin
-followers_list.each do |x|
-        p x.description
-end
-=end
-
 number = 1 
 #followできるかを判断するメソッド
 def can_follow?(match,out,client,description)
         return description =~ /match/ && !(description =~ /out/) && client.follow_request_sent? == false 
 end
+
+
+
 catch(:out) do
         followers_list.each do |x| 
                 followers_list_list = client.friends(x)
