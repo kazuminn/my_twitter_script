@@ -6,10 +6,10 @@ require 'pp'
 
 
 client = Twitter::REST::Client.new do |config|
-  config.consumer_key = "n8lzdx8JT35WGZVQBLEenTwKB"
-  config.consumer_secret = "B13zyBO6WfPXbtXNN0xB6kzk1bb3OQsdCm4IILe8t94e7UFPhm"
-  config.access_token = "3183045949-rlOlM5U8eFUEtYN119VjgeXiXIGkB5CoVQQyqZt"
-  config.access_token_secret = "bide0y9arSvnYJqaoU7rhSBmcPpeU8UC0e0rDevZVHTyg"
+  config.consumer_key = ""
+  config.consumer_secret = ""
+  config.access_token = ""
+  config.access_token_secret = ""
 end
 
 followers_list = client.friends("ryukyudai_tarou")
